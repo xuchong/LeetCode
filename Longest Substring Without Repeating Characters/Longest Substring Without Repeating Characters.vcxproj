@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{122C9F3C-9C10-4F45-B3BE-4E8D9F5A493E}</ProjectGuid>
-    <RootNamespace>AddTwoNumbers</RootNamespace>
+    <ProjectGuid>{5228510A-7439-43B6-97D3-ABC3C47B9091}</ProjectGuid>
+    <RootNamespace>LongestSubstringWithoutRepeatingCharacters</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
