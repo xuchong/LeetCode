@@ -12,6 +12,5 @@ aaaaaaaaaaaaab a*a*a*a*a*a*a*a*a*a*c
 
 bbcacbabbcbaaccabc b*a*a*.c*bb*b*.*.*
 
-cacbabbcbaaccabc .c*bb*b*.*.*
 
-acbabbcbaaccabc c*bb*b*.*.*
+a .*..a*

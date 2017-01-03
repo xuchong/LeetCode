@@ -3,7 +3,7 @@
 #include<string>
 using namespace std;
 #define TIMELIMIT
-#ifndef TIMELIMIT
+#ifdef TIMELIMIT
 class Solution {
 public:
     bool isMatch(string s, string p) {
@@ -14,6 +14,13 @@ public:
 private:
     bool is(string s,string p)
     {
+        while(p.length()>2&&p[1]=='*'&&p[0]==p[2])
+        {
+            if(p.length()>3&&p[3]=='*')
+                p=p.substr(2,p.length()-2);
+            else
+                break;
+        }
         if(s.length()==0)
             if((p.length()==0||(p.length()>=2&&p[1]=='*'&&is(s,p.substr(2,p.length()-2)))))
                 return 1;
