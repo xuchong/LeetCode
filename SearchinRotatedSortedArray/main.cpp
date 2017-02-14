@@ -40,19 +40,19 @@ public:
 			return 0;
 		}
 		middle = (low + high) / 2;
-		while (low != high&&low!=middle)
+		while (low < high)
 		{
 			middle = (low + high) / 2;
 			if (target > nums[middle])
 			{
-				low = middle;
+				low = middle+1;
 			}
 			else if (target < nums[middle])
-				high = middle;
+				high = middle-1;
 			else
 				return middle;
 		}
-		if (nums[low] != target)
+		if (nums[low] != target&&nums[high] != target)
 			return -1;
 		else
 			return low;
