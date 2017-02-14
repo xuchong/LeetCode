@@ -19,6 +19,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestValidParentheses", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchinRotatedSortedArray", "SearchinRotatedSortedArray\SearchinRotatedSortedArray.vcxproj", "{D95CA308-8651-46F5-9E36-9AA4B0D15136}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchforaRange", "SearchforaRange\SearchforaRange.vcxproj", "{536FD001-7A80-4E13-8A92-119B13831247}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchInsertPosition", "SearchInsertPosition\SearchInsertPosition.vcxproj", "{6B39867D-56BB-4D07-BA66-785CC8B6FA78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -57,6 +61,14 @@ Global
 		{D95CA308-8651-46F5-9E36-9AA4B0D15136}.Debug|Win32.Build.0 = Debug|Win32
 		{D95CA308-8651-46F5-9E36-9AA4B0D15136}.Release|Win32.ActiveCfg = Release|Win32
 		{D95CA308-8651-46F5-9E36-9AA4B0D15136}.Release|Win32.Build.0 = Release|Win32
+		{536FD001-7A80-4E13-8A92-119B13831247}.Debug|Win32.ActiveCfg = Debug|Win32
+		{536FD001-7A80-4E13-8A92-119B13831247}.Debug|Win32.Build.0 = Debug|Win32
+		{536FD001-7A80-4E13-8A92-119B13831247}.Release|Win32.ActiveCfg = Release|Win32
+		{536FD001-7A80-4E13-8A92-119B13831247}.Release|Win32.Build.0 = Release|Win32
+		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Debug|Win32.Build.0 = Debug|Win32
+		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Release|Win32.ActiveCfg = Release|Win32
+		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
