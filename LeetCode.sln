@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchforaRange", "Searchfo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchInsertPosition", "SearchInsertPosition\SearchInsertPosition.vcxproj", "{6B39867D-56BB-4D07-BA66-785CC8B6FA78}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SudokuSolver", "SudokuSolver\SudokuSolver.vcxproj", "{75F851EF-D60B-45BB-A0EF-375918F183DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -69,6 +71,10 @@ Global
 		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Debug|Win32.Build.0 = Debug|Win32
 		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Release|Win32.ActiveCfg = Release|Win32
 		{6B39867D-56BB-4D07-BA66-785CC8B6FA78}.Release|Win32.Build.0 = Release|Win32
+		{75F851EF-D60B-45BB-A0EF-375918F183DB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75F851EF-D60B-45BB-A0EF-375918F183DB}.Debug|Win32.Build.0 = Debug|Win32
+		{75F851EF-D60B-45BB-A0EF-375918F183DB}.Release|Win32.ActiveCfg = Release|Win32
+		{75F851EF-D60B-45BB-A0EF-375918F183DB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
