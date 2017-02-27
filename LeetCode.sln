@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrappingRainWater", "Trappi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplyStrings", "MultiplyStrings\MultiplyStrings.vcxproj", "{5E206217-A1B1-4DAC-8CFF-D52339B78373}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WildcardMatching", "WildcardMatching\WildcardMatching.vcxproj", "{14D0D7D9-632C-4F06-9DFE-353E3D0A6DB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -105,6 +107,10 @@ Global
 		{5E206217-A1B1-4DAC-8CFF-D52339B78373}.Debug|Win32.Build.0 = Debug|Win32
 		{5E206217-A1B1-4DAC-8CFF-D52339B78373}.Release|Win32.ActiveCfg = Release|Win32
 		{5E206217-A1B1-4DAC-8CFF-D52339B78373}.Release|Win32.Build.0 = Release|Win32
+		{14D0D7D9-632C-4F06-9DFE-353E3D0A6DB2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14D0D7D9-632C-4F06-9DFE-353E3D0A6DB2}.Debug|Win32.Build.0 = Debug|Win32
+		{14D0D7D9-632C-4F06-9DFE-353E3D0A6DB2}.Release|Win32.ActiveCfg = Release|Win32
+		{14D0D7D9-632C-4F06-9DFE-353E3D0A6DB2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
