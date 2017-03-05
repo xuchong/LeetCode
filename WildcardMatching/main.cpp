@@ -2,39 +2,90 @@
 #include<string>
 #include<cstring>
 #include<vector>
+#include<unordered_map>
 using namespace std;
+#define  TL
+#ifndef TL
 class Solution {
+private:
+    unordered_map<int,unordered_map<int,bool>> list;
 public:
+
 	bool backTracking( string s, string p,int sindex,int pindex)
 	{
+        if(list.find(sindex)!=list.end()){
+            if(list[sindex].find(pindex)!=list[sindex].end())
+                return list[sindex][pindex];
+        }
 		int i;
 		if (sindex == s.length())
 		{
-			if (pindex == p.length())
-				return true;
+			if (pindex == p.length()) {
+                if(list.find(sindex)==list.end()){
+                    unordered_map<int,bool> item;
+                    item[pindex]=true;
+                    list[sindex]= item;
+                }
+                return true;
+            }
 			else
 			{
 				while (p[pindex] == '*'&&pindex < p.length())
 					pindex++;
-				if (pindex == p.length())
-					return true;
-				else
-					return false;
+				if (pindex == p.length()) {
+                    if(list.find(sindex)==list.end()){
+                        unordered_map<int,bool> item;
+                        item[pindex]=true;
+                        list[sindex]= item;
+                    }
+                    return true;
+
+                }
+				else {
+                    if(list.find(sindex)==list.end()){
+                        unordered_map<int,bool> item;
+                        item[pindex]= false;
+                        list[sindex]= item;
+                    }
+                    return false;
+
+                }
 			}
 		}
-		if (pindex == p.length() && sindex != s.length())
-			return false;
-
+		if (pindex == p.length() && sindex != s.length()) {
+            if(list.find(sindex)==list.end()){
+                unordered_map<int,bool> item;
+                item[pindex]= false;
+                list[sindex]= item;
+            }
+            return false;
+        }
 		
 		if (p[pindex] == '?')
 		{
 			//index[pindex] = sindex;
-			return backTracking(s, p, sindex + 1, pindex + 1);
+            bool result=backTracking(s, p, sindex + 1, pindex + 1);
+            if(list.find(sindex)==list.end()){
+                unordered_map<int,bool> item;
+                item[pindex]= result;
+                list[sindex]= item;
+            }
+			return result;
 		}
 		else if (p[pindex] == '*')
 		{
 			i = 0;
 			i+=backTracking(s, p, sindex, pindex+1);
+            if(i>0)
+            {
+                bool result=i;
+                if(list.find(sindex)==list.end()){
+                    unordered_map<int,bool> item;
+                    item[pindex]= result;
+                    list[sindex]= item;
+                }
+                return result;
+            }
 			for (sindex = sindex+1; sindex <= s.length(); sindex++)
 			{
 				if (i > 0)
@@ -42,22 +93,42 @@ public:
 				i+=backTracking( s, p, sindex, pindex);
 				i+=backTracking(s, p, sindex, pindex + 1);
 			}
-			return i;
+            bool result=i;
+            if(list.find(sindex)==list.end()){
+                unordered_map<int,bool> item;
+                item[pindex]= result;
+                list[sindex]= item;
+            }
+            return result;
 		}
 		else
 		{
 			if (s[sindex] == p[pindex])
 			{
-				return backTracking( s, p, sindex+1, pindex + 1);
+                bool result=backTracking( s, p, sindex+1, pindex + 1);
+                if(list.find(sindex)==list.end()){
+                    unordered_map<int,bool> item;
+                    item[pindex]= result;
+                    list[sindex]= item;
+                }
+                return result;
 			}
 			else
-			return false;
+            {
+                bool result=false;
+                if(list.find(sindex)==list.end()){
+                    unordered_map<int,bool> item;
+                    item[pindex]= result;
+                    list[sindex]= item;
+                }
+                return result;
+            }
 		}
 
 	}
 	bool isMatch(string s, string p) {
 		int i;
-		vector<int> index2s;
+		list.clear();
 		if (s.empty())
 		{
 			if (p.empty())
@@ -93,10 +164,18 @@ public:
 		return backTracking(s,p,0,0);
 	}
 };
+#endif
+class Solution {
+public:
+    bool isMatch(string s, string p) {
+
+    }
+};
+
 int main()
 {
 	Solution ss;
-	string s = "babaaababaabababbbbbbaabaabbabababbaababbaaabbbaaab", p = "***bba**a*bbba**aab**b";
+	string s = "babaaababaabababababbaaa", p = "***bba**a*bbba**aab";
 	while (true)
 	{
 		cout << ss.isMatch(s, p) << endl;
