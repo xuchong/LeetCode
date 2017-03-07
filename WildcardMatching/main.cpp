@@ -4,7 +4,7 @@
 #include<vector>
 #include<unordered_map>
 using namespace std;
-#define  TL
+#define  TLL
 #ifndef TL
 class Solution {
 private:
@@ -74,32 +74,46 @@ public:
 		}
 		else if (p[pindex] == '*')
 		{
-			i = 0;
-			i+=backTracking(s, p, sindex, pindex+1);
-            if(i>0)
-            {
-                bool result=i;
-                if(list.find(sindex)==list.end()){
-                    unordered_map<int,bool> item;
-                    item[pindex]= result;
-                    list[sindex]= item;
-                }
-                return result;
-            }
-			for (sindex = sindex+1; sindex <= s.length(); sindex++)
+			if (pindex == p.length() - 1)
+				return true;
+			int next_start = p.find("*", pindex+1);
+			string substrP;
+			if (next_start == -1)
 			{
-				if (i > 0)
-					break;
-				i+=backTracking( s, p, sindex, pindex);
-				i+=backTracking(s, p, sindex, pindex + 1);
+				substrP = p.substr(pindex + 1, p.length() - pindex-1);
+				int a = s.length(), b = substrP.length();
+				cout <<s.length()<<" "<<substrP.length()<<" "<< (int)(s.length() - substrP.length()) << endl;
+				if ((a-b)>= sindex)
+					return backTracking(s, p, s.length() - substrP.length(), pindex + 1);
+				else
+					return false;
 			}
-            bool result=i;
-            if(list.find(sindex)==list.end()){
-                unordered_map<int,bool> item;
-                item[pindex]= result;
-                list[sindex]= item;
-            }
-            return result;
+			else
+			{
+				substrP = p.substr(pindex + 1, next_start - pindex - 1);
+				int i , j , flag = 0;
+				for (i = sindex; i < s.length() - substrP.length()+1; i++)
+				{
+					for ( j = 0; j < substrP.length(); j++)
+					{
+						//cout << s[i + j] << substrP[j] << endl;
+						if ((i+j)>=s.length()||(s[i+j] != substrP[j] && substrP[j] != '?'))
+							break;
+					}
+					if (j == substrP.length())
+					{
+						flag = 1;
+						break;
+					}
+				}
+				if (flag == 1)
+				{
+					return backTracking(s,p,i+substrP.length(),next_start);
+				}
+				else{
+					return false;
+				}
+			}
 		}
 		else
 		{
@@ -164,18 +178,22 @@ public:
 		return backTracking(s,p,0,0);
 	}
 };
-#endif
+#else
 class Solution {
 public:
-    bool isMatch(string s, string p) {
+	bool isMatch(string s, string p) {
 
-    }
+	}
 };
+#endif
 
+//"abefcdgiescdfimde"
+//"bb"
+//"*?bb"
 int main()
 {
 	Solution ss;
-	string s = "babaaababaabababababbaaa", p = "***bba**a*bbba**aab";
+	string s = "bb", p = "*?bb";
 	while (true)
 	{
 		cout << ss.isMatch(s, p) << endl;
