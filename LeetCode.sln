@@ -43,6 +43,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PermutationsII", "Permutati
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RotateImage", "RotateImage\RotateImage.vcxproj", "{D5F2B83F-EB85-47A6-B41D-6C9BAD65CFF5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N-Queens", "N-Queens\N-Queens.vcxproj", "{0E4744C1-57D9-4DD6-A75C-C56A2B31C144}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N-QueensII", "N-QueensII\N-QueensII.vcxproj", "{AAFE5437-BA96-452E-8FE5-28D1FD3090E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -129,6 +133,14 @@ Global
 		{D5F2B83F-EB85-47A6-B41D-6C9BAD65CFF5}.Debug|Win32.Build.0 = Debug|Win32
 		{D5F2B83F-EB85-47A6-B41D-6C9BAD65CFF5}.Release|Win32.ActiveCfg = Release|Win32
 		{D5F2B83F-EB85-47A6-B41D-6C9BAD65CFF5}.Release|Win32.Build.0 = Release|Win32
+		{0E4744C1-57D9-4DD6-A75C-C56A2B31C144}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0E4744C1-57D9-4DD6-A75C-C56A2B31C144}.Debug|Win32.Build.0 = Debug|Win32
+		{0E4744C1-57D9-4DD6-A75C-C56A2B31C144}.Release|Win32.ActiveCfg = Release|Win32
+		{0E4744C1-57D9-4DD6-A75C-C56A2B31C144}.Release|Win32.Build.0 = Release|Win32
+		{AAFE5437-BA96-452E-8FE5-28D1FD3090E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AAFE5437-BA96-452E-8FE5-28D1FD3090E7}.Debug|Win32.Build.0 = Debug|Win32
+		{AAFE5437-BA96-452E-8FE5-28D1FD3090E7}.Release|Win32.ActiveCfg = Release|Win32
+		{AAFE5437-BA96-452E-8FE5-28D1FD3090E7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
