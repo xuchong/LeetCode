@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include<cstring>
 using namespace std;
+#define TL
+#ifndef TL
 class Solution {
 private:
     vector<vector<string>> recursive(int n)
@@ -70,6 +74,68 @@ public:
         return result;
     }
 };
+#else
+//back tracking
+class Solution {
+private:
+	bool checkIfcan(vector<int>& matrix,int index){
+		int i;
+		int n = matrix.size();
+		matrix[index]++;
+		while (matrix[index] < n)
+		{
+			for ( i = 0; i < index; i++)
+			{
+				// same column or diagonal
+				if (matrix[index]==matrix[i]||matrix[i] - matrix[index] == i - index || matrix[i] - matrix[index] == index - i)
+				{
+					break;
+				}
+			}
+			if (i == index)
+			{
+				return true;
+			}
+			matrix[index]++;
+		}
+		matrix[index] = -1;
+		return false;
+	}
+public:
+	vector<vector<string>> solveNQueens(int n) {
+		vector<vector<string>> result;
+		if (n <= 0)
+			result;
+		vector<int> matrix_int(n,-1);
+		for (int i = 0; i < n; i++)
+		{
+	
+			if (!checkIfcan(matrix_int, i))
+			{
+				if (i == 0)
+					break;
+				i -= 2;
+			}
+			// already do
+			else if (i == n - 1)
+			{
+				vector<string> matrix;
+				for (int j = 0; j < n; j++)
+				{
+					string item(n, '.');
+					item[matrix_int[j]] = 'Q';
+					matrix.push_back(item);
+				}
+				result.push_back(matrix);
+
+				i--;
+			}
+		}
+
+		return result;
+	}
+};
+#endif
 int main() {
     Solution s;
     vector<vector<string>> result;
