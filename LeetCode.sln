@@ -63,6 +63,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniquePathsII", "UniquePath
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MinimumPathSum", "MinimumPathSum\MinimumPathSum.vcxproj", "{5913CDEB-5C52-4377-B1B4-F8825D0C8054}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ValidNumber", "ValidNumber\ValidNumber.vcxproj", "{72D3DD8D-28F4-4983-80C8-2E6E363A7993}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextJustification", "TextJustification\TextJustification.vcxproj", "{AA9C4450-E19C-4F19-BEF6-1DC1E68B20A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -189,6 +193,14 @@ Global
 		{5913CDEB-5C52-4377-B1B4-F8825D0C8054}.Debug|Win32.Build.0 = Debug|Win32
 		{5913CDEB-5C52-4377-B1B4-F8825D0C8054}.Release|Win32.ActiveCfg = Release|Win32
 		{5913CDEB-5C52-4377-B1B4-F8825D0C8054}.Release|Win32.Build.0 = Release|Win32
+		{72D3DD8D-28F4-4983-80C8-2E6E363A7993}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72D3DD8D-28F4-4983-80C8-2E6E363A7993}.Debug|Win32.Build.0 = Debug|Win32
+		{72D3DD8D-28F4-4983-80C8-2E6E363A7993}.Release|Win32.ActiveCfg = Release|Win32
+		{72D3DD8D-28F4-4983-80C8-2E6E363A7993}.Release|Win32.Build.0 = Release|Win32
+		{AA9C4450-E19C-4F19-BEF6-1DC1E68B20A0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AA9C4450-E19C-4F19-BEF6-1DC1E68B20A0}.Debug|Win32.Build.0 = Debug|Win32
+		{AA9C4450-E19C-4F19-BEF6-1DC1E68B20A0}.Release|Win32.ActiveCfg = Release|Win32
+		{AA9C4450-E19C-4F19-BEF6-1DC1E68B20A0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
