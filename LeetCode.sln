@@ -109,6 +109,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DecodeWays", "DecodeWays\De
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReverseLinkedListII", "ReverseLinkedListII\ReverseLinkedListII.vcxproj", "{FE8D6F3D-FAAA-42C8-B0AE-73E508875B64}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RestoreIPAddresses", "RestoreIPAddresses\RestoreIPAddresses.vcxproj", "{F11FA459-F490-430A-ABB6-7161F73F526E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -327,6 +329,10 @@ Global
 		{FE8D6F3D-FAAA-42C8-B0AE-73E508875B64}.Debug|Win32.Build.0 = Debug|Win32
 		{FE8D6F3D-FAAA-42C8-B0AE-73E508875B64}.Release|Win32.ActiveCfg = Release|Win32
 		{FE8D6F3D-FAAA-42C8-B0AE-73E508875B64}.Release|Win32.Build.0 = Release|Win32
+		{F11FA459-F490-430A-ABB6-7161F73F526E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F11FA459-F490-430A-ABB6-7161F73F526E}.Debug|Win32.Build.0 = Debug|Win32
+		{F11FA459-F490-430A-ABB6-7161F73F526E}.Release|Win32.ActiveCfg = Release|Win32
+		{F11FA459-F490-430A-ABB6-7161F73F526E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
