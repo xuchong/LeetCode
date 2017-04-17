@@ -1,13 +1,15 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+#define UNFINISHED
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+#ifndef UNFINISHED
 class Solution {
 private:
 	void recursive(TreeNode* tree, int shift)
@@ -96,6 +98,46 @@ public:
 		return a[n];
 	}
 };
+#else
+class Solution {
+private :
+	vector<TreeNode*> recursive(int left,int right)
+	{	
+		vector<TreeNode*> result;
+		if (left > right){
+			result.push_back(NULL);
+			return result;
+		}
+		for (int i = left; i <= right; i++)
+		{
+			
+			vector<TreeNode*> leftNode = recursive(left, i - 1);
+			vector<TreeNode*> rightNode = recursive(i + 1, right);
+			//make tree
+			for (int j = 0; j < leftNode.size(); j++)
+			{
+				for (int k = 0; k < rightNode.size(); k++)
+				{
+					TreeNode* root = new TreeNode(i);
+					root->left = leftNode[j];
+					root->right = rightNode[k];
+					result.push_back(root);
+				}
+			}
+		}
+		return result;
+	}
+public:
+	vector<TreeNode*> generateTrees(int n) {
+		if (n == 0)
+		{
+			vector<TreeNode*> result;
+			return result;
+		}
+		return recursive(1, n);
+	}
+};
+#endif
 int main()
 {
 	Solution s;
