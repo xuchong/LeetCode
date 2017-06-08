@@ -117,6 +117,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniqueBinarySearchTrees", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniqueBinarySearchTreesII", "UniqueBinarySearchTreesII\UniqueBinarySearchTreesII.vcxproj", "{B3504B7E-19A9-4049-A584-78EA8905CA57}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InterleavingString", "InterleavingString\InterleavingString.vcxproj", "{37A7FBEA-9646-43BE-8DD2-56215979B747}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -351,6 +353,10 @@ Global
 		{B3504B7E-19A9-4049-A584-78EA8905CA57}.Debug|Win32.Build.0 = Debug|Win32
 		{B3504B7E-19A9-4049-A584-78EA8905CA57}.Release|Win32.ActiveCfg = Release|Win32
 		{B3504B7E-19A9-4049-A584-78EA8905CA57}.Release|Win32.Build.0 = Release|Win32
+		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Debug|Win32.ActiveCfg = Debug|Win32
+		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Debug|Win32.Build.0 = Debug|Win32
+		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Release|Win32.ActiveCfg = Release|Win32
+		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
