@@ -3,6 +3,9 @@
 #include<string>
 #include<vector>
 using namespace std;
+#define TL_SO
+#ifndef TL_SO
+//time limited and stack overflow
 class Solution {
 private:
 	bool check(string s1, string s2, string s3, vector<int>&s1_index,int n=-1)
@@ -84,9 +87,16 @@ public:
 		return check(s1, s2, s3, s1_index, -1);
 	}
 };
-// aabcc dbbca aadbbcbcac 
-// aabcc dbbca aadbbbaccc 
-// bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab
+#else
+class Solution{
+public:
+	bool isInterleave(string s1, string s2, string s3)
+	{
+
+	}
+};
+#endif
+
 int main()
 {
 	Solution s;
