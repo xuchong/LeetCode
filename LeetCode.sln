@@ -119,6 +119,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniqueBinarySearchTreesII",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InterleavingString", "InterleavingString\InterleavingString.vcxproj", "{37A7FBEA-9646-43BE-8DD2-56215979B747}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ValidateBinarySearchTree", "ValidateBinarySearchTree\ValidateBinarySearchTree.vcxproj", "{9BC9CE0E-121B-425C-B7D2-DE13E77215AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecoverBinarySearchTree", "RecoverBinarySearchTree\RecoverBinarySearchTree.vcxproj", "{8C829185-634A-4951-8039-E2E4A74BB492}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -357,6 +361,14 @@ Global
 		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Debug|Win32.Build.0 = Debug|Win32
 		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Release|Win32.ActiveCfg = Release|Win32
 		{37A7FBEA-9646-43BE-8DD2-56215979B747}.Release|Win32.Build.0 = Release|Win32
+		{9BC9CE0E-121B-425C-B7D2-DE13E77215AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9BC9CE0E-121B-425C-B7D2-DE13E77215AD}.Debug|Win32.Build.0 = Debug|Win32
+		{9BC9CE0E-121B-425C-B7D2-DE13E77215AD}.Release|Win32.ActiveCfg = Release|Win32
+		{9BC9CE0E-121B-425C-B7D2-DE13E77215AD}.Release|Win32.Build.0 = Release|Win32
+		{8C829185-634A-4951-8039-E2E4A74BB492}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8C829185-634A-4951-8039-E2E4A74BB492}.Debug|Win32.Build.0 = Debug|Win32
+		{8C829185-634A-4951-8039-E2E4A74BB492}.Release|Win32.ActiveCfg = Release|Win32
+		{8C829185-634A-4951-8039-E2E4A74BB492}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

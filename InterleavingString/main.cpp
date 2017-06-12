@@ -92,7 +92,52 @@ class Solution{
 public:
 	bool isInterleave(string s1, string s2, string s3)
 	{
-
+		if (s1.empty())
+			return s2 == s3;
+		if (s2.empty())
+			return s1 == s3;
+		if (s1.length() + s2.length() != s3.length())
+			return 0;
+		int dp[100][100] = { 0 };
+		// init the dp
+		dp[0][0] = 1;
+		string tmp;
+		for (int i = 1; i <= s1.length(); i++)
+		{
+			if (s1[i - 1] == s3[i - 1])
+			{
+				dp[i][0] = 1;
+			}
+			else{
+				break;
+			}
+			
+		}
+		for (int j = 1; j <= s2.length(); j++)
+		{
+			if (s2[j - 1] == s3[j - 1])
+				dp[0][j] = 1;
+			else
+				break;
+		}
+		for (int i = 1; i <= s1.length(); i++)
+		{
+			for (int j = 1; j <= s2.length(); j++)
+			{
+				if (s1[i - 1] == s3[i + j - 1] && dp[i - 1][j] == 1)
+				{
+					dp[i][j] = 1;
+				}
+				if (s2[j - 1] == s3[i + j - 1] && dp[i][j - 1] == 1)
+				{
+					dp[i][j] = 1;
+				}
+			}
+		}
+		if (dp[s1.length()][s2.length()] == 1)
+			return true;
+		else
+			return false;
 	}
 };
 #endif
