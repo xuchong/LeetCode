@@ -18,6 +18,7 @@ public:
           result=prices[i]-_min;
         }
       }
+      return result;
     }
 };
 int main()
