@@ -50,8 +50,10 @@ public:
         {
           for(vector<string>::iterator it=wordList.begin();it!=wordList.end();)
           {
-            if(index[it-wordList.begin()])
+            if(index[it-wordList.begin()]){
+              it++;
               continue;
+            }
             if(isDiffOne(*it,layer.front()))
             {
               newlayer.push(*it);
