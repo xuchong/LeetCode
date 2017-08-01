@@ -5,74 +5,91 @@
 #include<queue>
 #include<algorithm>
 #include<fstream>
+#include<unordered_map>
+#include<unordered_set>
 using namespace std;
 
-// 不考虑空间，BFS
+// 不考虑空间，(BFS + DFS)!!  hardest one!
 class Solution {
 private:
 vector<vector<string> > result;
-bool isDiffOne(string&a ,string& b)
-{
-  int i=0;
-  int count=0;
-  while(i<a.length()&&count<2)
+private:
+  void DFS(unordered_map<string,vector<string>>&layers,unordered_map<string,int>& heights,vector<string>item,string start,string end)
   {
-    if(a[i]!=b[i])
-      count++;
-    i++;
+    if(start==end)
+    {
+      item.push_back(end);
+      result.push_back(item);
+      return;
+    }
+    if(layers.find(start)==layers.end())
+      return;
+    item.push_back(start);
+    for(int i=0;i<layers[start].size();i++)
+    {
+      if(heights[layers[start][i]]==heights[start]+1)
+        DFS(layers,heights,item,layers[start][i],end);
+    }
   }
-  if(count==1)
-    return true;
-  return false;
-}
 
 public:
     vector<vector<string> > findLadders(string beginWord, string endWord, vector<string>& wordList) {
       if(beginWord.empty())
         return result;
-      queue<string> layer,newlayer;
-      queue<vector<string> > path,newpath;
+      unordered_set<string> dict(wordList.begin(),wordList.end());
+      if(dict.find(endWord)==dict.end())
+        return result;
+      unordered_map<string,vector<string>> layers;
+      unordered_map<string,int> heights;
+      queue<string> layer;
+      //queue<vector<string> > path;
       layer.push(beginWord);
-      vector<string> item;
-      item.push_back(beginWord);
-      path.push(item);
+      heights[beginWord]=0;
+      //vector<string> item;
+      //item.push_back(beginWord);
+      //path.push(item);
 
-      //clear
-      vector<int> index(wordList.size(),0),newindex(wordList.size(),0);
-
-      while(result.empty()&&!layer.empty())
+      string node,tmp;
+      //遍历每一层
+      while(!layer.empty())
       {
-        //遍历每一层
-        queue<string>().swap(newlayer);
-        queue<vector<string> >().swap(newpath);
-        index=newindex;
-        while(!layer.empty())
-        {
-          for(vector<string>::iterator it=wordList.begin();it!=wordList.end();)
+        node=layer.front();
+        layer.pop();
+        if(node==endWord)
+          break;
+        if(layers.find(node)==layers.end())
+          layers[node]=vector<string>();
+        else
+          continue;
+        for(int i=0;i<node.length();i++){
+          tmp=node;
+          for(char j='a';j<='z';j++)
           {
-            if(index[it-wordList.begin()]){
-              it++;
+            if(tmp[i]==j)
               continue;
-            }
-            if(isDiffOne(*it,layer.front()))
+            tmp[i]=j;
+            if(dict.find(tmp)!=dict.end()&&layers.find(tmp)==layers.end())
             {
-              newlayer.push(*it);
-              newpath.push(path.front());
-              newpath.back().push_back(*it);
-              if(*it==endWord)
-              {
-                result.push_back(newpath.back());
-              }
-              newindex[it-wordList.begin()]=1;
+              layer.push(tmp);
+              if(heights.find(tmp)==heights.end())
+                heights[tmp]=heights[node]+1;
+              layers[node].push_back(tmp);
             }
-            it++;
           }
-          layer.pop();
-          path.pop();
         }
-        layer.swap(newlayer);
-        path.swap(newpath);
       }
+     // for(unordered_map<string,vector<string>>::iterator it=layers.begin();it!=layers.end();it++)
+     // {
+     //  cout<<"key: "<<it->first<<endl;
+     //  for(int i=0;i<it->second.size();i++)
+     //  {
+     //      cout<<it->second[i]<<" ";
+     //  }
+     //  cout<<endl;
+     // }
+      // DFS for path
+      vector<string> path;
+      DFS(layers,heights,path,beginWord,endWord);
       return result;
     }
 };
