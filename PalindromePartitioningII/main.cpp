@@ -2,6 +2,7 @@
 #include<string>
 #include<cstring>
 #include<vector>
+#include
 using namespace std;
 class Solution {
 private:
@@ -46,30 +47,45 @@ public:
     int minCut(string s) {
         if(s.empty())
           return 0;
-        int dp[1000][1000]={0};
+        vector<vector<int>> dp(s.length(),vector<int>(s.length(),0));
         for(int i=0;i<s.length();i++)
         {
-          for(int j=i;j<s.length();j++)
-          {
-            dp[i][j]=isPalindrome(s,i,j);
-          }
+            dp[i][i]=1;
         }
         //return getNumberByRecursive(s,dp,0,s.length()-1);
-        int cuts[1000];
+        int cuts[s.length()];
         //from 0 to N == cuts[N] how many
         cuts[0]=0;
+        // for(int i=1;i<s.length();i++)
+        // {
+        //   if(isPalindrome(s,0,i))
+        //   {
+        //     cuts[i]=0;
+        //     continue;
+        //   }
+        //   cuts[i]=cuts[i-1]+1;
+        //   for(int j=1;j<i;j++)
+        //   {
+        //     if(s[j]==s[i]&&isPalindrome(s,j,i)&&(cuts[j-1]+1)<cuts[i])
+        //     {
+        //       cuts[i]=cuts[j-1]+1;
+        //     }
+        //   }
+        //
+        // }
+
         for(int i=1;i<s.length();i++)
         {
           cuts[i]=cuts[i-1]+1;
-          if(dp[0][i])
-            cuts[i]=0;
-          else{
-            for(int j=0;j<i;j++)
+          for(int j=0;j<i;j++)
+          {
+            if(dp[j+1][i-1]&&s[i]==s[j])
             {
-              if(dp[j+1][i]&&(cuts[j]+1)<cuts[i])
-              {
-                cuts[i]=cuts[j]+1;
-              }
+              dp[j][i]=1;
+              if(j==0)
+                cuts[i]=0;
+              else
+                cuts[i]=min(cuts[i],cuts[j-1]+1);
             }
           }
         }
