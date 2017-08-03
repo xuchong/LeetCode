@@ -16,32 +16,32 @@ bool isPalindrome(string& s,int start,int end)
   }
   return true;
 }
-int getNumberByRecursive(string& s,int dp[][1000] ,int start,int end)
-{
-  if(dp[start][end])
-  {
-    return 0;
-  }
-  int cut=INT_MAX;
-  int tmp;
-  for(int i=start;i<end;i++)
-  {
-    if(dp[start][i])
-    {
-      tmp=getNumberByRecursive(s,dp,i+1,end);
-
-      if(tmp==0)
-      {
-        cut=tmp+1;
-        return cut;
-      }else
-      {
-        cut=min(cut,tmp+1);
-      }
-    }
-  }
-  return cut;
-}
+// int getNumberByRecursive(string& s,int dp[][1000] ,int start,int end)
+// {
+//   if(dp[start][end])
+//   {
+//     return 0;
+//   }
+//   int cut=INT_MAX;
+//   int tmp;
+//   for(int i=start;i<end;i++)
+//   {
+//     if(dp[start][i])
+//     {
+//       tmp=getNumberByRecursive(s,dp,i+1,end);
+//
+//       if(tmp==0)
+//       {
+//         cut=tmp+1;
+//         return cut;
+//       }else
+//       {
+//         cut=min(cut,tmp+1);
+//       }
+//     }
+//   }
+//   return cut;
+// }
 public:
     int minCut(string s) {
         if(s.empty())
@@ -54,8 +54,26 @@ public:
             dp[i][j]=isPalindrome(s,i,j);
           }
         }
-        return getNumberByRecursive(s,dp,0,s.length()-1);
-
+        //return getNumberByRecursive(s,dp,0,s.length()-1);
+        int cuts[1000];
+        //from 0 to N == cuts[N] how many
+        cuts[0]=0;
+        for(int i=1;i<s.length();i++)
+        {
+          cuts[i]=cuts[i-1]+1;
+          if(dp[0][i])
+            cuts[i]=0;
+          else{
+            for(int j=0;j<i;j++)
+            {
+              if(dp[j+1][i]&&(cuts[j]+1)<cuts[i])
+              {
+                cuts[i]=cuts[j]+1;
+              }
+            }
+          }
+        }
+        return cuts[s.length()-1];
     }
 };
 /*
