@@ -2,6 +2,8 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
+//#define stupid
+#ifndef stupid
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
@@ -13,6 +15,20 @@ public:
       }
     }
 };
+#elif
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ones=0,twos=0;
+        for(int i=0;i<nums.size();i++)
+        {
+          ones=ones^nums[i]&~twos;
+          twos=twos^nums[i]&~ones;
+        }
+        return ones;
+    }
+};
+#endif
 int main(){
   return 0;
 }
