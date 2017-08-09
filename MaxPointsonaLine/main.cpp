@@ -2,6 +2,7 @@
 #include<cmath>
 #include<vector>
 #include<unordered_map>
+#include<unordered_set>
 using namespace std;
 struct Point{
   int x;
@@ -24,17 +25,32 @@ private:
     }
 public:
     int maxPoints(vector<Point>& points) {
-      if(points.size()==0)
-        return 0;
-      unordered_map<int,unordered_map<int,unordered_map<int,int>>> dict;// y=k*x+b.  k=k1/k2,key=key1,key2=vector[0], b=vector[1]. number=vector[2]; we presume: key1 positive.
+      if(points.size()<=1)
+        return points.size();
+      unordered_map<int,unordered_map<int,unordered_map<int,unordered_set<int>>>> dict;// y=k*x+b.  k=k1/k2,key=key1,key2=vector[0], b=vector[1]. number=vector[2]; we presume: key1 positive.
       int divisor,key1,key2,b,flag=1;
       int count=0;
+      unordered_map<int,vector<int>> specialone;// key2=0
       for(int i=0;i<points.size();i++)
       {
         for(int j=i+1;j<points.size();j++)
         {
           key1=(points[j].y-points[i].y);
           key2=(points[j].x-points[i].x);
+          if(key2==0)
+          {
+            if(specialone.find(points[i].x)==specialone.end()){
+                specialone[points[i].x].push_back(i);
+                specialone[points[i].x].push_back(2);
+              }
+            else{
+                if(i==specialone[points[i].x][0])
+                  specialone[points[i].x][1]+=1;
+              }
+            count=specialone[points[i].x][1]>count?specialone[points[i].x][1]:count;
+            continue;
+          }
+
           if((key1>=0&&key2>0)||(key1<=0&&key2<0))
           {
             flag=1;
@@ -55,22 +71,38 @@ public:
               auto it3=it2->second.find(b);
               if(it3!=it2->second.end())
               {
-                it3->second+=1;
-                count=it3->second>count?it3->second:count;
-              }else
+                //if(it3->second[0]==i||(points[it3->second[0]].x==points[j].x&&points[it3->second[0]].y==points[j].y)||(points[it3->second[0]].x==points[i].x&&points[it3->second[0]].y==points[i].y)){
+                auto it4=it3->second.find(j);
+                if(it4==it3->second.end()){
+                  it3->second.insert(j);
+                  count=it3->second.size()>count?it3->second.size():count;
+                }
+                it4=it3->second.find(i);
+                if(it4==it3->second.end()){
+                  it3->second.insert(i);
+                  count=it3->second.size()>count?it3->second.size():count;
+                }
+              }
+              else
               {
-                it2->second[b]=1;
-                count=1>count?1:count;
+                it2->second[b].insert(i);
+                it2->second[b].insert(j);
+                count=2>count?2:count;
               }
             }else
             {
-              it1->second[key2]={b,1};
-              count=1>count?1:count;
+              //it1->second[key2]=unordered_map<int,int>();
+              it1->second[key2][b].insert(i);
+              it1->second[key2][b].insert(j);
+              count=2>count?2:count;
             }
           }else
           {
-            dict[key1]={key2,{b,1}};
-            count=1>count?1:count;
+            // dict[key1]=unordered_map<int,unordered_map<int,int>>();
+            // dict[key1][key2]={b,1};
+            dict[key1][key2][b].insert(i);
+            dict[key1][key2][b].insert(j);
+            count=2>count?2:count;
           }
         }
       }
