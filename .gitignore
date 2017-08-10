@@ -253,3 +253,5 @@ paket-files/
 */cmake-build-debug
 */CMakeLists.txt
 
+# executale file
+*/main
