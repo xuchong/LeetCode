@@ -3,7 +3,7 @@ public:
     vector<string> findRepeatedDnaSequences(string s) {
       unordered_map<unsigned int,int> dicts;
       // and
-      unsigned int a=0xFFFFF;
+      unsigned int a=(int)(pow(2,20)-1);
       unordered_set<int> result_set;
       vector<string> result;
 
@@ -27,7 +27,7 @@ public:
         }
       }
       dicts[number]=0;
-      for(int i=1;i<s.length();i++)
+      for(int i=10;i<s.length();i++)
       {
         number=number<<2&a;
         cout<<number<<endl;
@@ -49,7 +49,7 @@ public:
           }
         }else
         {
-          dicts[number]=i;
+          dicts[number]=i-9;
         }
       }
       // change
