@@ -125,6 +125,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecoverBinarySearchTree", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SameTree", "SameTree\SameTree.vcxproj", "{8857B330-3DD0-4D82-917C-71EA402AE131}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CourseSchedule", "CourseSchedule\CourseSchedule.vcxproj", "{EE2AA250-203B-4B96-B39B-5AD48777AA19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -375,6 +377,10 @@ Global
 		{8857B330-3DD0-4D82-917C-71EA402AE131}.Debug|Win32.Build.0 = Debug|Win32
 		{8857B330-3DD0-4D82-917C-71EA402AE131}.Release|Win32.ActiveCfg = Release|Win32
 		{8857B330-3DD0-4D82-917C-71EA402AE131}.Release|Win32.Build.0 = Release|Win32
+		{EE2AA250-203B-4B96-B39B-5AD48777AA19}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EE2AA250-203B-4B96-B39B-5AD48777AA19}.Debug|Win32.Build.0 = Debug|Win32
+		{EE2AA250-203B-4B96-B39B-5AD48777AA19}.Release|Win32.ActiveCfg = Release|Win32
+		{EE2AA250-203B-4B96-B39B-5AD48777AA19}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
