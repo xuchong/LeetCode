@@ -52,7 +52,7 @@ public:
         {
           item=layer.back();
           layer.pop_back();
-          
+          if(dict.find(item)==dict.end()||)
         }
       }
       return true;
