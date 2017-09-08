@@ -4,7 +4,6 @@ public:
         if(nums.empty())
           return false;
         int i=0,j=0;
-        bool result=false;
         unordered_set<int> sets;
         if(nums.size()<=k)
         {
@@ -21,7 +20,7 @@ public:
           sets.erase(nums[j-k-1]);
           if(sets.find(nums[j])!=sets.end())
             return true;
-          set.insert(nums[j]);
+          sets.insert(nums[j]);
         }
         return false;
     }
